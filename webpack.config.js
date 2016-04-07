@@ -1,11 +1,14 @@
 var webpack = require('webpack');
 var path = require('path');
 
-var src_dir = path.resolve(__dirname, 'src/client/public');
-var dist_dir = path.resolve(__dirname, 'dist/client/app');
+var src_dir = path.resolve(__dirname, 'src/');
+var dist_dir = path.resolve(__dirname, 'dist/');
 
 var config = {
-	entry: src_dir + '/index.jsx',
+	entry: [
+		'webpack-hot-middleware/client',
+		src_dir + '/index.jsx'
+	],	
 	output: {
 		path: dist_dir,
 		filename: 'bundle.js'
@@ -13,12 +16,26 @@ var config = {
 	module: {
 		loaders: [
 			{
-				test: /\.jsx?/,
-				include: src_dir,
-				loader: 'babel'
+				test: /\.js$/,
+				exclude: /node_modules/,
+				loader: 'babel-loader'
+			},
+			{
+				test: /\.jsx?$/,
+				exclude: /node_modules/,
+				loader: 'babel-loader'
 			}
 		]
-	}
+	},
+	 resolve: {
+        extensions: ['', '.js', '.jsx']
+    },
+	plugins: [
+			new webpack.optimize.OccurenceOrderPlugin(),
+	 		new webpack.HotModuleReplacementPlugin(),
+	 		new webpack.NoErrorsPlugin()
+ 		]
+	
 };
 
 module.exports = config;
