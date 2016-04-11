@@ -5,36 +5,42 @@ var src_dir = path.resolve(__dirname, 'src/');
 var dist_dir = path.resolve(__dirname, 'dist/');
 
 var config = {
-	entry: [
-		'webpack-hot-middleware/client',
-		src_dir + '/index.jsx'
-	],	
+	entry: __dirname + '/src/index.jsx',
+
 	output: {
-		path: dist_dir,
+		path: __dirname + '/dist/',
+		publicPath: '/',
 		filename: 'bundle.js'
 	},
+
 	module: {
 		loaders: [
 			{
-				test: /\.js$/,
-				exclude: /node_modules/,
-				loader: 'babel-loader'
+				test: /\.jsx?$/,
+				include: __dirname + '/src',
+				loader: 'babel'
 			},
 			{
-				test: /\.jsx?$/,
+				test: /\.js$/,
 				exclude: /node_modules/,
-				loader: 'babel-loader'
+				loader: 'babel'
 			}
 		]
 	},
-	 resolve: {
-        extensions: ['', '.js', '.jsx']
-    },
+	resolve: {
+		extensions: ['', '.js', '.jsx']
+	},
 	plugins: [
-			new webpack.optimize.OccurenceOrderPlugin(),
-	 		new webpack.HotModuleReplacementPlugin(),
-	 		new webpack.NoErrorsPlugin()
- 		]
+		new webpack.HotModuleReplacementPlugin()
+	],
+	devtool: 'source-map',
+	devServer: {
+		colors: true,
+		historyApiFallback: true,
+		inline: true,
+		hot: true,
+		contentBase: './'
+	}
 	
 };
 

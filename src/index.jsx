@@ -2,16 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 class Layout extends React.Component {
-	constructor() {
-		super();
-	}
-	render() {
+	render: function() {
 		return (
-			<div> Hi React, how are you? </div>
-			)
+			<div> Sup </div>	
+		)
 	}
 }
 
-const app = document.getElementById('app');
-
-ReactDOM.render(<Layout />, app);
+ReactDOM.render(<Layout/>, document.getElementById('app'));
