@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 class Layout extends React.Component {
-	render: function() {
+	render() {
 		return (
-			<div> Sup </div>	
+			<div> heyyyy </div>	
 		)
 	}
 }
