@@ -1,0 +1,5 @@
+$blue: rgba(0,0,240,0.8);
+//doesnt work - can't see how to match the css and react component even when requiring in the jsx
+body {
+	background-color: $blue;
+}

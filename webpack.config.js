@@ -1,6 +1,6 @@
 var webpack = require('webpack');
 var path = require('path');
-
+// var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var src_dir = path.resolve(__dirname, 'src/');
 var dist_dir = path.resolve(__dirname, 'dist/');
 
@@ -17,7 +17,7 @@ var config = {
 		loaders: [
 			{
 				test: /\.jsx?$/,
-				include: __dirname + '/src',
+				include: __dirname + '/src/',
 				loader: 'babel'
 			},
 			{
@@ -25,6 +25,16 @@ var config = {
 				exclude: /node_modules/,
 				loader: 'babel'
 			}
+			// {
+			// 	test: /\.css$/,
+			// 	include: /src/,
+			// 	loader: ExtractTextPlugin.extract("style-loader", "css-loader")
+			// },
+			// {
+			// 	test: /\.scss$/,
+			// 	include: /src/,
+			// 	loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader")
+			// }
 		]
 	},
 	resolve: {
@@ -32,6 +42,8 @@ var config = {
 	},
 	plugins: [
 		new webpack.HotModuleReplacementPlugin()
+		// new ExtractTextPlugin("styles.css")
+
 	],
 	devtool: 'source-map',
 	devServer: {

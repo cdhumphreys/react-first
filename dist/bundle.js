@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "14c2988a508e3a66c798"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "ff4124e05689d288dba0"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -603,6 +603,8 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
+	__webpack_require__(166);
+	
 	var Layout = function (_React$Component) {
 		_inherits(Layout, _React$Component);
 	
@@ -617,8 +619,8 @@
 			value: function render() {
 				return _react2.default.createElement(
 					'div',
-					null,
-					' heyyyy '
+					{ 'class': 'test' },
+					' finalllyyyyyyy '
 				);
 			}
 		}]);
@@ -20582,6 +20584,12 @@
 	var ReactMount = __webpack_require__(156);
 	
 	module.exports = ReactMount.renderSubtreeIntoContainer;
+
+/***/ },
+/* 166 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
 
 /***/ }
 /******/ ]);

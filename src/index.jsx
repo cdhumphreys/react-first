@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+// require("./styles.scss");
 class Layout extends React.Component {
 	render() {
 		return (
-			<div> oy you </div>	
+			<div> finalllyyyyyyy </div>	
 		)
 	}
 }
