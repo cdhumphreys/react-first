@@ -1,14 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 // require("./styles.scss");
+import Header from "./components/Header";
+
+
 class Layout extends React.Component {
-	constructor() {
-		super();
-		this.name = "Carl"
-	}
+	
 	render() {
 		return (
-			<div> Hello {this.name}!</div>	
+			<div>
+				<Header/>
+			</div>	
 		)
 	}
 }

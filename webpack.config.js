@@ -5,7 +5,7 @@ var src_dir = path.resolve(__dirname, 'src/');
 var dist_dir = path.resolve(__dirname, 'dist/');
 
 var config = {
-	entry: __dirname + '/src/index.jsx',
+	entry: __dirname + '/src/index.js',
 
 	output: {
 		path: __dirname + '/dist/',
