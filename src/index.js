@@ -1,15 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 // require("./styles.scss");
-import Header from "./components/Header";
+import TabLayout from "./components/TabLayout";
 
 
 class Layout extends React.Component {
+	constructor() {
+		super();
+		this.state = {
+			tabs: [
+				"Home",
+				"Portfolio",
+				"Archives",
+				"About",
+				"Contact"
+			]
+		};
+	}
 	
 	render() {
+		
 		return (
 			<div>
-				<Header/>
+				<TabLayout tabs={this.state.tabs}/>
 			</div>	
 		)
 	}
