@@ -21,14 +21,14 @@ class Tab extends React.Component {
 			width: '100px',
 			height: '50px',
 			lineHeight: '50px',
-			border: '1px black solid'
+			border: '1px black solid',
+			boxShadow: '0 1px 3px #000'
 
 		};
 		const titleStyles = {
 			width: '50px',			
 			marginLeft: 'calc(50% - 25px)',		
 			color: 'yellow'
-
 		};
 
 
